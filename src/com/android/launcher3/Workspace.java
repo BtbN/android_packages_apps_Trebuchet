@@ -525,7 +525,8 @@ public class Workspace extends PagedView
     }
 
     private int getDefaultPage() {
-        return numCustomPages();
+        int res = numCustomPages() + 1;
+        return	(res >= getChildCount()) ? res - 1 : res;
     }
 
     private void setupLayoutTransition() {
